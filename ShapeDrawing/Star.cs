@@ -46,7 +46,7 @@ public class Star : Shape
 		Pen pen = new Pen (Color.Black);
 		for (int i = 0; i < numPoints; i++) 
 		{
-			Canvas.DrawLine(pen,pts[i].X,
+			Canvas.DrawLine(pen,pts[i].X ,
                                 pts[i].Y,
                                 pts[(i+1) % numPoints].X,
                                 pts[(i+1) % numPoints].Y);

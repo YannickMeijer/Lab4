@@ -6,8 +6,6 @@ using System.Text;
 
 class Circle : Shape
 {
-	private int size;
-
     public Circle(int x, int y, int size)
     {
 		this.x = x;

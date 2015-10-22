@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
+    <Compile Include="GraphicsConversion.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Rectangle.cs" />
     <Compile Include="Shape.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Star.cs" />
+    <Compile Include="SVGGraphics.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
