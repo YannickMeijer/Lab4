@@ -24,13 +24,13 @@ public class SVGGraphics : GraphicsConversion
                 output = output + points[i].X.ToString() + "," + points[i].Y.ToString() + " ";
             }
 
-            output = output + points[0].X.ToString() + "," + points[0].Y.ToString() + "\"\r\nstyle=\"fill: none; stroke: black; stroke - width:1\" />";
+            output = output + points[0].X.ToString() + "," + points[0].Y.ToString() + "\"\r\nstyle=\"fill:none;stroke:black;stroke-width:1\" />";
 
             return output;
         }
         else
         {
-            output = "\r\n<circle cx = \"" + (points[0].X + size / 2).ToString() + "\" cy = \"" + (points[0].Y + size / 2).ToString() +                 "\" r = \"" + (size / 2).ToString() + "\" stroke-width = \"1\" fill = \"none\" stroke = \"black\" />";            return output;
+            output = "\r\n<circle cx=\"" + (points[0].X + size / 2).ToString() + "\" cy=\"" + (points[0].Y + size / 2).ToString() +                 "\" r=\"" + (size / 2).ToString() + "\" stroke-width=\"1\"\r\nfill=\"none\" stroke=\"black\" />";            return output;
         }
     }
 }
