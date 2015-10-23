@@ -16,33 +16,34 @@ public class Parser
 		foreach(XmlNode shape in doc.SelectNodes("/shapes/*"))
 		{
 			string type = shape.Name;
-			int x; int y; int width; int height;
-			switch(type)
+            int x; int y; Tuple<int, int> a;
+            x = int.Parse(shape.Attributes["x"].Value);
+            y = int.Parse(shape.Attributes["y"].Value);
+            switch (type)
             {
 
                 case "rectangle":
-					x = int.Parse(shape.Attributes["x"].Value);
-					y = int.Parse(shape.Attributes["y"].Value);
-					width = int.Parse(shape.Attributes["width"].Value);
-					height = int.Parse(shape.Attributes["height"].Value);
-                    shapes.Add(new Rectangle(x, y, width, height));
+                    a = findWidthHeight(shape);
+                    shapes.Add(new Rectangle(x, y, a.Item1, a.Item2));
                     break;
                 case "circle":
-					x = int.Parse(shape.Attributes["x"].Value);
-					y = int.Parse(shape.Attributes["y"].Value);
 					int size = int.Parse(shape.Attributes["size"].Value);
                     shapes.Add(new Circle(x, y, size));
                     break;
 				case "star":
-					x = int.Parse(shape.Attributes["x"].Value);
-					y = int.Parse(shape.Attributes["y"].Value);
-					width = int.Parse(shape.Attributes["width"].Value);
-					height = int.Parse(shape.Attributes["height"].Value);
-					shapes.Add (new Star(x,y,width,height));
+                    a = findWidthHeight(shape);
+                    shapes.Add (new Star(x,y, a.Item1, a.Item2));
 					break;
             }
 		}
 		
 		return shapes;
 	}
+
+    static Tuple<int, int> findWidthHeight(XmlNode shape)
+    {
+        int width = int.Parse(shape.Attributes["width"].Value);
+        int height = int.Parse(shape.Attributes["height"].Value);
+        return Tuple.Create<int, int>(width, height);
+    }
 }
