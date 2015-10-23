@@ -77,7 +77,7 @@ public class ShapeDrawingForm : Form
                     "\r\n<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">";
                 foreach (Shape shape in shapes)
                 {
-                    SVGtext = SVGtext + shape.Conversion();
+                    SVGtext = SVGtext + shape.Conversion("SVG");
                 }
                 SVGtext = SVGtext + "\r\n</svg>";
                     using (StreamWriter writer = new StreamWriter(stream))

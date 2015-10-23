@@ -6,26 +6,25 @@ public abstract class Shape
     protected int x;
     protected int y;
     protected Point[] pts;
-    protected SVGGraphics converter;
+    protected GraphicsConversion converter;
     protected int size;
 
     public Shape()
     {
-        converter = new SVGGraphics();
     }
 
     public abstract void fillPoints();
 
     public abstract void Draw(Graphics Canvas);
 
-    public string Conversion()
+    public string Conversion(string a)
     {
-        return converter.writeSVG(pts, size);
+        switch (a)
+        {
+            case "SVG":
+                converter = new SVGGraphics();
+                break;
+        }
+        return converter.writeConverter(pts, size);
     }
-
-    public Point[] getPoints
-    {
-        get { return this.pts; }
-    }
-
 }

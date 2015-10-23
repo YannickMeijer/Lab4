@@ -11,7 +11,7 @@ public class SVGGraphics : GraphicsConversion
     { }
 
 
-    public string writeSVG(Point[] points, int size = 0)
+    public override string writeConverter(Point[] points, int size = 0)
     {
 
         string output;
